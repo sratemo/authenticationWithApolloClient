@@ -1,39 +1,37 @@
 type User {
-   id:UUID!
-   username: String!
-   password: String!
-   email: String!
-   privilege: String!
-   active: Boolean!
-   createdAt: Datetime!
-   updatedAt: Datetime!
+  id: UUID!
+  username: String!
+  password: String!
+  email: String!
+  privilege: String!
+  active: Boolean!
+  createdAt: Datetime!
+  updatedAt: Datetime!
 }
 
-
 type Query {
-   getUSers: [User!]
-   getUserData(at: String!: User!
+  getUsers: [User!]
+  getUserData(at: String!): User!
 }
 
 type Mutation {
-   createUser(input: CreateUserInput) : User!
-   login(input: LoginInput : AuthPayload!
+  createUser(input: CreateUserInput): User!
+  login(input: LoginInput): AuthPayload!
 }
 
 input CreateUserInput {
-   username: String!
-   password: String!
-   email: String!
-   privilege: String!
-   active: Boolean!
-} 
+  username: String!
+  password: String!
+  email: String!
+  privilege: String!
+  active: Boolean!
+}
 
 input LoginInput {
-   email: String!
-   password: String! 
+  email: String!
+  password: String!
 }
 
 type AuthPayload {
-   token: String! 
+  token: String!
 }
-
